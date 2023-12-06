@@ -13,7 +13,7 @@ const fakeFetchFunction = () => new Promise<ReturnedData>((resolve) => {
 })
 
 export const FetchComponentDisabled = () => {
-  const { data, status, isLoading, isFetching, isPending, isRefetching, refetch } = useQuery({
+  const { data, status, isLoading, isFetching, isInitialLoading, isRefetching, refetch } = useQuery({
     queryKey: ['happy-number-initial-data'],
     queryFn: fakeFetchFunction,
     enabled: false
@@ -39,7 +39,7 @@ export const FetchComponentDisabled = () => {
               isLoading
             </th>
             <th>
-              isPending
+             isInitialLoading 
             </th>
             <th>
               isFetching
@@ -63,7 +63,7 @@ export const FetchComponentDisabled = () => {
               {JSON.stringify(isLoading)}
             </td>
             <td>
-              {JSON.stringify(isPending)}
+              {JSON.stringify(isInitialLoading)}
             </td>
             <td>
               {JSON.stringify(isFetching)}
